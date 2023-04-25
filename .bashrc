@@ -1,7 +1,7 @@
 alias hormnanlog='tail -30f /app/horus/server/horman/log/horman.log'
 alias trafflog='tail -100f /app/horus/server/trafficam/log/trafficam.log'
 alias appenv='vim /app/horus/.env'
-alias dup='cd /app/horus ;  docker-compose up -d'
+alias dup='docker-compose up -d'
 alias dl='docker logs --tail 100 -f '
 
 
