@@ -1,6 +1,6 @@
 #!/bin/bash
 GIT_REPO_URL="https://hub.fgit.ml/illbnm/config.git"
-GIT_REPO_DIR="config"
+GIT_REPO_DIR="../config"
 
 
 
