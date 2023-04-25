@@ -11,7 +11,7 @@ alias dl='docker logs --tail 100 -f '
 
 
 # 系统相关
-alias ll='ls -lh --color'
+alias ll='ls -lah --color'
 alias meminfo='free -h -l -t'
 alias cd..='cd ..'
 alias ports='netstat -tulanp'
