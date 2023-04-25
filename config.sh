@@ -14,8 +14,8 @@ else
     cd "$GIT_REPO_DIR"
 fi
 
-ln -sf $PWD/.vimrc ~/.vimrc
-ln -sf $PWD/.bashrc ~/.bashrc
+ln -sf $PWD/.vimrc ~/.vimrc && source ~/.vimrc
+ln -sf $PWD/.bashrc ~/.bashrc && source ~/.bashrc
 
 # 要添加的 crontab 定时任务
 CRONTAB_JOB="0 0 0 * * ?  $PWD/config.sh"
