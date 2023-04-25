@@ -18,7 +18,7 @@ ln -sf $PWD/.vimrc ~/.vimrc && source ~/.vimrc
 ln -sf $PWD/.bashrc ~/.bashrc && source ~/.bashrc
 
 # 要添加的 crontab 定时任务
-CRONTAB_JOB="0 0 0 * * ?  $PWD/config.sh"
+CRONTAB_JOB="0 0 1 * * ?  $PWD/config.sh"
 # 判断 crontab 中是否已经存在该定时任务
 if crontab -l | grep -Fxq "$CRONTAB_JOB"; then
     echo "Crontab job already exists, nothing to do."
