@@ -4,10 +4,10 @@
 IMAGE_NAME=$1
 
 # Pull the image
-docker pull dockerproxy.com/library/$IMAGE_NAME
+docker pull dockerproxy.com/$IMAGE_NAME
 
 # Tag the image with the new name
-docker tag dockerproxy.com/library/$IMAGE_NAME $IMAGE_NAME
+docker tag dockerproxy.com/$IMAGE_NAME $IMAGE_NAME
 
 # Remove the original image
-docker rmi dockerproxy.com/library/$IMAGE_NAME
+docker rmi dockerproxy.com/$IMAGE_NAME
