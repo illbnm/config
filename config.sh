@@ -7,7 +7,7 @@ GIT_REPO_DIR="../config"
 # 判断目录是否存在
 if [ -d "$GIT_REPO_DIR" ]; then
     echo "Git repository directory already exists, changing directory."
-    cd "$GIT_REPO_DIR" && git pull
+    cd "$GIT_REPO_DIR" && git pull -f
 else
     echo "Git repository directory does not exist, cloning repository."
     git clone "$GIT_REPO_URL" "$GIT_REPO_DIR"
