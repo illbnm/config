@@ -25,3 +25,25 @@ mcd() { mkdir -p $1 && cd $1 && pwd ; }
 
 alias openport='iptables -A INPUT -p tcp --dport $1 -j ACCEPT && service iptables reload'
 alias openports="iptables -L INPUT -nv | grep 'dpt:'"
+
+
+# docker pull 
+function pull_rename_delete() {
+    IMAGE_NAME=$1
+    docker pull dockerproxy.com/library/$IMAGE_NAME:latest
+    docker tag dockerproxy.com/library/$IMAGE_NAME:latest $IMAGE_NAME:latest
+    docker rmi dockerproxy.com/library/$IMAGE_NAME:latest
+}
+alias dpr="function _dpr() { docker pull dockerproxy.com/library/\$1:latest; pull_rename_delete \$1; };_dpr"
+
+function docker() {
+  case "$1" in
+    pull)
+      shift
+      dpr "$@"
+      ;;
+    *)
+      command docker "$@"
+      ;;
+  esac
+}
