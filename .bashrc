@@ -12,6 +12,7 @@ alias dl='docker logs --tail 100 -f '
 
 # 系统相关
 alias ll='ls -lah --color'
+alias tree='find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g''
 alias meminfo='free -h -l -t'
 alias cd..='cd ..'
 alias ports='netstat -tulanp'
@@ -27,7 +28,7 @@ alias openport='iptables -A INPUT -p tcp --dport $1 -j ACCEPT && service iptable
 alias openports="iptables -L INPUT -nv | grep 'dpt:'"
 
 
-# docker pull 
+# docker pull
 function pull_rename_delete() {
     IMAGE_NAME=$1
     docker pull dockerproxy.com/library/$IMAGE_NAME:latest
