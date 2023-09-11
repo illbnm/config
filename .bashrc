@@ -12,7 +12,7 @@ alias dl='docker logs --tail 100 -f '
 
 # 系统相关
 alias ll='ls -lah --color'
-alias tree='find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g''
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'""
 alias meminfo='free -h -l -t'
 alias cd..='cd ..'
 alias ports='netstat -tulanp'
