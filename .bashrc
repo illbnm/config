@@ -28,23 +28,3 @@ alias openport='iptables -A INPUT -p tcp --dport $1 -j ACCEPT && service iptable
 alias openports="iptables -L INPUT -nv | grep 'dpt:'"
 
 
-# docker pull
-function pull_rename_delete() {
-    IMAGE_NAME=$1
-    docker pull dockerproxy.com/library/$IMAGE_NAME:latest
-    docker tag dockerproxy.com/library/$IMAGE_NAME:latest $IMAGE_NAME:latest
-    docker rmi dockerproxy.com/library/$IMAGE_NAME:latest
-}
-alias dpr="function _dpr() { docker pull dockerproxy.com/library/\$1:latest; pull_rename_delete \$1; }
-
-function docker() {
-  case "$1" in
-    pull)
-      shift
-      dpr "$@"
-      ;;
-    *)
-      command docker "$@"
-      ;;
-  esac
-}
