@@ -26,5 +26,15 @@ mcd() { mkdir -p $1 && cd $1 && pwd ; }
 
 alias openport='iptables -A INPUT -p tcp --dport $1 -j ACCEPT && service iptables reload'
 alias openports="iptables -L INPUT -nv | grep 'dpt:'"
+back() {
+  if [ "$#" -ne 2 ]; then
+    echo "Usage: back <command> <logfile>"
+    return 1
+  fi
+  command=$1
+  logfile=$2
+  nohup $command > "$logfile" 2>&1 &
+  echo "Command '$command' is running in the background, output is being logged to $logfile"
+}
 
 
